@@ -1,7 +1,5 @@
 main {
-  min-width: 300px;
   max-width: 600px;
-
   position:absolute;
   top: 50%;
   margin-top: -200px;
@@ -9,12 +7,12 @@ main {
   margin-left: -300px;
 }
 
-#mainlogo {
+#logo {
   width: 100%;
 }
 
-nav {
-  width: 400px;
+#links {
+  float: right;
 }
 
 .info-line {
@@ -34,4 +32,26 @@ nav {
 
 .info-line img:active {
   opacity: 0.4;
+}
+
+/* iPad */
+@media screen and (max-device-width: 768px) {
+  main {
+    max-width: 480px;
+    margin-top: -150px;
+    margin-left: -240px;
+  }
+  
+  #social {
+    display: block;
+    text-align: center;
+  }
+}
+
+@media screen and (max-device-width: 600px) {
+  main {
+    max-width: 300px;
+    margin-top: -100px;
+    margin-left: -150px;
+  }
 }

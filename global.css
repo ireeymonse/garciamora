@@ -10,12 +10,6 @@ body {
   font-family: Comfortaa, sans-serif;
 }
 
-@media print and (orientation: landscape) {
-  body {
-    background-color: red;
-  }
-}
-
 footer {
   position:absolute;
   bottom: 0;
