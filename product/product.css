@@ -8,7 +8,9 @@ main {
 
 .filters {
   float: left;
-  width: 230px;
+  width: 215px;
+  margin-left: 15px;
+  display: none;
 }
 
 .order {
@@ -33,7 +35,6 @@ main {
   display: inline-block;
   margin: 15px;
   vertical-align: top;
-  width: 200px;
 }
 
 .item img {
@@ -42,13 +43,21 @@ main {
 }
 
 .name, .price {
-  margin-top: 5px;
   font-size: 110%;
 }
 
 .price {
-  display: block;
-  font-weight: 600;
+  padding: 7px;
+  border-radius: 3px;
+  font-weight: bold;
+  display: inline-block;
+  color: black;
+  text-decoration: none;
+  transition:background-color .125s;
+}
+
+.price:before {
+  content: "$ ";
 }
 
 .glove {
@@ -59,10 +68,35 @@ main {
   color: cadetblue;
 }
 
-.sonaja {
+.rattle {
   color:cornflowerblue;
 }
 
 .figure {
   color:dimgrey;
+}
+
+.purchase {
+  text-align: right;
+  vertical-align: middle;
+  margin-top: 7px;
+}
+
+.stock {
+  margin-top: 5px;
+  float: left;
+}
+
+.stock:after {
+  content: " disponible(s)";
+  font-size: 13px;
+  color: dimgrey;
+}
+
+.item:hover .price {
+  background-color: cornflowerblue;
+}
+
+.line {
+  font-size: 0.95em;
 }
