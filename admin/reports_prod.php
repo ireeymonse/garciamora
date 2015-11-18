@@ -4,8 +4,13 @@
     <meta name='viewport' content='width=device-width' />
     <title>Garc&iacute;aMora &nbsp;|&nbsp; Reportes</title>
     <link rel='shortcut icon' href='favicon.ico' type='image/x-icon' />
-    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="../global.css">
     <link rel="stylesheet" href="main.css">
+    <style>
+      tbody tr:nth-child(even) {
+         background-color: #fcd894;
+      }
+    </style>
   </head>
   
   <body>

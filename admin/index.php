@@ -13,34 +13,36 @@
   <link rel='shortcut icon' href='../favicon.ico' type='image/x-icon' />
   <link rel="stylesheet" href="../global.css">
   <link rel="stylesheet" href="main.css">
-  
-  <script>
-    function del(id, name) {
-      if (confirm("¿Estás seguro de borrar el producto '"+name+"'?")) {
-        var form = document.forms[0];
-        form.elements["delete_id"].value = id;
-        form.submit();
-      }
+  <link rel="stylesheet" href="../media/pop_up.css">
+  <style>
+    .pop-up .titulo {
+      color:#55B5B5;
+      margin-bottom: 10px;
     }
-  </script>
-</head>
-<body>
-  <form method="post">
-    <input type="hidden" name="delete_id" />
-  </form>
+  </style>
   
-  <?php
-  include("connection.php");
-
-  //borrar elemento si es necesario
-  include("delete.php");
+  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="../media/pop_up.js"></script>
+</head>
+  
+<body>
+  <div id="fondo-negro" onclick="ocultar();" ></div>
+  <?php 
+  //crear un nuevo producto
+  include "create.php";
+  //crear un nuevo producto
+  include "update.php";
+  //borrar producto
+  include "delete.php";
   ?>
   
   <header>
-    <img id="logo" src="media/logow70@2x.png"/>
-    <h1>García Mora</h1>
+    <a href=".." target="_blank" style="border:none: text-decoration:none;">
+      <img id="logo" src="media/logow70@2x.png"/>
+      <h1>García Mora</h1>
+    </a>
     <nav>
-      <a href="create.php">+ Añadir producto</a>
+      <a href="javascript:mostrar('crear')">+ Añadir producto</a>
       <a href="reports_prod.php" target="_blank">Reportes por modelo</a>
       <a href="reports_stock.php" target="_blank">Reportes por existencias</a>
     </nav>
@@ -57,11 +59,12 @@
     </tr>
     
   <?php
-  $consulta=mysql_query("SELECT product.*, line.name as line FROM line inner join product on line_id = line.id", $conexion) or die(mysql_error());  
+  $consulta=mysql_query("SELECT product.*, line.name as line FROM line inner join product on line_id = line.id order by line.name, product.name", $conexion) or die(mysql_error());  
 
   while($filas = mysql_fetch_array($consulta)) {
     $id=$filas['id'];
     $name=$filas['name'];
+    $line_id=$filas['line_id'];
     $line=$filas['line'];
     $price=$filas['price'];
     $stock=$filas['stock'];
@@ -70,11 +73,11 @@
       <tr>
         <td> <?php echo "<p class='soft'>".$id."</p>"; ?></td>
         <td> <?php echo "<p>".$name."</p>"; ?></td>
-        <td> <?php echo "<p>".$line."</p>"; ?></td>
+        <td> <?php echo "<p class='$line_id'>".$line."</p>"; ?></td>
         <td> <?php echo "<p class='price'>".$price."</p>"; ?></td>
         <td> <?php echo "<p>".$stock."</p>"; ?></td>
         <td> <?php echo "<a href=\"".$image."\" target='_blank'>Imagen</a>"; ?></td>
-        <td><a href="update.php?id=<?php echo $id; ?>"> Modificar </a></td>
+        <td><a href="javascript:modif(<?php echo "$id, '$name', '$line_id', '$price', '$stock', '$image'"; ?>)">Modificar</a></td>
         <td><a href="javascript:del(<?php echo "$id, '$name'"; ?>)">Eliminar</a></td>
       </tr>
   <?php

@@ -33,7 +33,7 @@ CREATE TABLE product (
     ON DELETE NO ACTION ON UPDATE cascade
 ) ENGINE=InnoDB CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
--- Datos iniciales???????
+-- Datos iniciales [?]
 INSERT INTO product (id, line_id, name, price, stock, image_url) VALUES
 (1, 'glove', 'Rinoceronte', 390, 3, 'https://www.facebook.com/garciamoramx/photos/pb.210837345711993.-2207520000.1447185570./445370258925366/?type=3&theater'),
 (2, 'finger', 'Elefantl', 360, 2, 'https://www.facebook.com/garciamoramx/photos/pb.210837345711993.-2207520000.1447202667./541312102664514/?type=3&theater'),

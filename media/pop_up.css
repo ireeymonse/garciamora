@@ -1,0 +1,95 @@
+
+/*#pop{
+ border:#000 solid 1px;
+ background:#cff;
+ width:200px;
+ height:200px;
+ left:50%;
+ top:50%;
+ margin-left:-100px;
+ margin-top:-100px;
+ position:fixed;
+ display:none;
+}*/
+#fondo-negro
+{
+    background:black;
+    width:100%;
+    height:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    opacity:0.3;
+    filter: alpha(opacity=30);  /* IE8 y anteriores */
+    display:none;
+    z-index:2;
+}
+.pop-up
+{
+    width:350px;
+    padding:20px 30px;
+    border:1px solid gray; background-color: White;
+    left:50%;
+    top:50%;
+    position:fixed;
+    display:none;
+    z-index:2;
+}
+.pop-up .etiq-info
+{
+    color:#777;
+}
+.pop-up .titulo
+{
+    color:#999;
+}
+.pop-up td
+{
+    padding: 3px 3px 3px 0;
+}
+.pop-up .td-etiqueta-control
+{
+    width:90px;
+}
+
+.pop-up .cerrar
+{
+    height:15px; width:15px;
+    background-image:url('cerrar.png');
+    background-repeat:no-repeat;
+    background-position:left;
+    position:absolute;
+    top:13px; right:13px;
+    cursor:pointer;
+}
+.pop-up .cerrar:hover
+{
+    background-position:right;
+}
+
+/*.oculto
+{
+    -webkit-transition:1s; -moz-transition:1s; -o-transition:1s; -ms-transition:1s; opacity:0; -ms-opacity:0; -moz-opacity:0; visibility:hidden;
+}*/
+
+.v
+{
+    display:block;
+}
+
+.pop-upx
+{
+    width:350px;
+    padding:20px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -khtml-border-radius: 15px;
+    border-radius: 15px;    
+    border:1px solid gray; background-color: White;
+    left:50%;
+    top:50%;
+    position:relative;
+    top:0 !important;left:0 !important;
+    margin-left:0 !important; margin-top:0 !important;
+    display:block;
+}
