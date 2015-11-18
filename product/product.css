@@ -60,22 +60,6 @@ main {
   content: "$ ";
 }
 
-.glove {
-  color: crimson;
-}
-
-.finger {
-  color: cadetblue;
-}
-
-.rattle {
-  color:cornflowerblue;
-}
-
-.figure {
-  color:dimgrey;
-}
-
 .purchase {
   text-align: right;
   vertical-align: middle;

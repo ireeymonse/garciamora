@@ -20,3 +20,20 @@ footer {
   left: 0;
   width: 100%;
 }
+
+/* lineas de productos */
+.glove {
+  color: crimson;
+}
+
+.finger {
+  color: cadetblue;
+}
+
+.rattle {
+  color:cornflowerblue;
+}
+
+.figure {
+  color:dimgrey;
+}
