@@ -35,6 +35,7 @@ main {
   display: inline-block;
   margin: 15px;
   vertical-align: top;
+  cursor: pointer;
 }
 
 .item img {
@@ -77,10 +78,39 @@ main {
   color: dimgrey;
 }
 
+.stock.unique:after {
+  content: "Producto único";
+}
+
 .item:hover .price {
   background-color: cornflowerblue;
 }
 
 .line {
   font-size: 0.95em;
+}
+
+/* product detail pop-up */
+
+.pop-up {
+  width: 800px;
+  padding: 15px 10px;
+  box-sizing: border-box;
+}
+
+.pop-up .product-image {
+  width: 100%;
+}
+
+/* iPad */
+@media screen and (max-device-width: 1024px) {
+  .pop-up {
+    width: 750px;
+  }
+}
+
+@media screen and (max-device-width: 480px) {
+  .pop-up {
+    width: 310px;
+  }
 }
