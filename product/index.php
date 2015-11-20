@@ -21,6 +21,7 @@
       <span class="filter rattle">Sonaja</span>
       <span class="filter figure">Figura</span>
     </aside>
+    
     <section class="products-list">
       
       <?php

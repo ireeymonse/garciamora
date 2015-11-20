@@ -4,6 +4,7 @@
 <div id="crear" class="pop-up" style="width:300px;">
   <div class="cerrar" onclick="ocultar();" ></div>
   <div class="titulo">Añadir producto</div>
+  
   <form name="product" method="post" >
     <input type="text" name="name" placeholder="nombre..." required />
     <select name="line" required>
@@ -20,7 +21,7 @@
 
     <input type="number" min="1" step="0.1" name="price" placeholder="Precio..." required/>
     <input type="number" min="1" name="stock" placeholder="Stock..." value="1" required/>
-    <input type="url" name="image" placeholder="Imagen..." required/>
+    <input type="text" name="image" placeholder="Imagen..." pattern="http:\/\/[A-Za-z]+" required/>
     <input type="submit" name="create" value="Crear"/>
   </form>
 </div>
@@ -28,8 +29,8 @@
 <?php
   //creacion del producto
   if(isset($_POST['create'])) {
-    if (valid_post('name') && valid_post('line') && valid_post('price') &&
-        valid_post('stock') && valid_post('image')) {
+    if (valid_post('name') && valid_post('line') && valid_num_post('price') &&
+        valid_num_post('stock') && valid_post('image')) {
       $name=$_POST['name'];
       $line=$_POST['line'];
       $price=$_POST['price'];

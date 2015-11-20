@@ -31,7 +31,9 @@
     
   <?php
   include("connection.php");
-  $consulta=mysql_query("SELECT line.name as line, count(*) as count, count(*)*100/(select count(*) from product) as percentage FROM line inner join product on line_id = line.id GROUP BY line_id", $conexion) or die(mysql_error());  
+  $consulta=mysql_query("SELECT line.name as line, count(*) as count, count(*)*100/(select count(*) from product) as percentage 
+  FROM line inner join product on line_id = line.id 
+  GROUP BY line_id", $conexion) or die(mysql_error());  
 
   while($filas = mysql_fetch_array($consulta)) {
   ?>

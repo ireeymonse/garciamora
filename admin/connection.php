@@ -8,6 +8,10 @@ mysql_query("SET NAMES utf8");  //arregla problemas de codificacion de caractere
 
 //validaciones más cortas :D
 function valid_post($key){
-    return isset($_POST[$key]) && !empty($_POST[$key]);
+  return isset($_POST[$key]) && !empty($_POST[$key]);
+}
+
+function valid_num_post($key){
+  return isset($_POST[$key]) && $_POST[$key] > 0;
 }
 ?>

@@ -65,7 +65,7 @@ include("connection.php");
 <script>
   function modif(id, name, lineId, price, stock, image) {
     mostrar("modificar");
-    var form = document.forms["modificar"];
+    var form = document.forms["modif-form"];
     form.elements["idmod"].value = id;
     form.elements["namemod"].value = name;
     form.elements["linemod"].value = lineId;
@@ -79,11 +79,12 @@ include("connection.php");
 <div id="modificar" class="pop-up" style="width:300px;">
   <div class="cerrar" onclick="ocultar();" ></div>
   <div class="titulo">Modificar producto</div>
-  <form name="modificar" method="post">
+  
+  <form name="modif-form" method="post">
     <input type="hidden" name="idmod">
-    <input id="mod-name" placeholder="" type="text" name="namemod" required>
+    <input placeholder="" type="text" name="namemod" required>
 
-    <select id="mod-line" name="linemod">  
+    <select name="linemod">  
     <?php 
     $consulta=mysql_query("SELECT id,name FROM line ORDER BY name");
 
@@ -98,9 +99,9 @@ include("connection.php");
     ?>
     </select> 
 
-    <input id="mod-price" placeholder="" type="number" min="1" step="0.1" name="pricemod" required>
-    <input id="mod-stock" placeholder="" type="number" min="1" name="stockmod" required>
-    <input id="mod-imageUrl" placeholder="" type="url" name="imagemod" required>  
+    <input placeholder="" type="number" min="1" step="0.1" name="pricemod" required>
+    <input placeholder="" type="number" min="1" name="stockmod" required>
+    <input placeholder="" type="url" name="imagemod" required>  
     <input type="submit" value="Guardar" name="update">
   </form>
 </div>
@@ -109,8 +110,8 @@ include("connection.php");
 <?php
   //modificar producto
   if ($product_id = $_POST["idmod"]){
-    if (valid_post('namemod') && valid_post('linemod') && valid_post('pricemod') &&
-        valid_post('stockmod') && valid_post('imagemod'))
+    if (valid_post('namemod') && valid_post('linemod') && valid_num_post('pricemod') &&
+        valid_num_post('stockmod') && valid_post('imagemod'))
     {
       $name=$_POST['namemod'];
       $line=$_POST['linemod'];
