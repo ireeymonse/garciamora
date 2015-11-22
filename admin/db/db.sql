@@ -47,3 +47,12 @@ INSERT INTO product (id, line_id, name, price, stock, image_url) VALUES
 (13, 5, 'Triceratops', 350, 1, '-'),
 (14, 5, 'conejo', 190, 3, 'conejito'),
 (22, 2, 'Jirafina', 920, 1, 'a.co');
+
+INSERT INTO `product` (`id`, `line_id`, `name`, `price`, `stock`, `image_url`) VALUES
+(1, 'glove', 'Beagle', 380, 1, 'https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.topanimalsites.net%2Fnews%2Fgallery%2Fbeagle%2Fbeagle_3.jpg&f=1'),
+(2, 'glove', 'Rinoceronte', 480, 1, 'http://localhost/garciamora/media/products/rino.jpg'),
+(3, 'glove', 'Dragón verde', 520, 1, 'https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xta1/v/t1.0-9/10393837_498254730303585_424652622974897535_n.jpg?oh=78b0ecc397f05e02bb9c69472e741fca&oe=56B3B7C6'),
+(4, 'rattle', 'Caballito de mar', 300, 1, 'http://localhost/garciamora/media/products/hipocampo.jpg'),
+(6, 'glove', 'Hidra', 680, 1, 'http://localhost/garciamora/media/products/hidra.jpg'),
+(7, 'glove', 'Dragón rosa', 520, 1, 'http://localhost/garciamora/media/products/dragonRosa.jpg'),
+(8, 'glove', 'Braquiosaurio', 380, 1, 'http://localhost/garciamora/media/products/braquio.jpg');
