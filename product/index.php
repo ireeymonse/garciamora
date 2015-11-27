@@ -42,7 +42,7 @@
     $image_url=$filas['image_url'];
       ?>
       <div class="item">
-        <img  class="product-image" src="<?php echo $image_url ?>" onclick="zoom('<?php echo $image_url ?>')" />
+        <img class="product-image" src="<?php echo $image_url ?>" onclick="zoom('<?php echo $image_url ?>')" />
         <div class="name"><?php echo $name ?></div><span class="line <?php echo $line_id ?>"><?php echo $line ?></span><div class="purchase"><span class="stock"><?php echo $stock ?></span><a href="#" class="price"><?php echo $price ?></a></div>
       </div>
   <?php } ?>
